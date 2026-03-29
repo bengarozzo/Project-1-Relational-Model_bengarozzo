@@ -1,0 +1,6 @@
+pandas
+duckdb
+matplotlib
+scikit-learn
+jupyter
+kagglehub
