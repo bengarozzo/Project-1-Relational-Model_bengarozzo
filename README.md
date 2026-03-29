@@ -66,11 +66,11 @@ See the [background_reading](./background_reading) folder.
 
 | Title | Brief Description | Link |
 |---|---|---|
-| Hybrid Basketball Game Outcome Prediction Model | Applies machine learning techniques to NBA data to predict game outcomes. | [paper](background_reading/paper1_hybrid_model.pdf) |
-| GCN + Random Forest Basketball Prediction | Combines graph neural networks and random forests to improve prediction accuracy. | [paper](background_reading/paper2_gcn_rf.pdf) |
-| Predicting the Winning Team in Basketball | Explores statistical patterns in basketball data to predict winners. | [paper](background_reading/paper3_novel_approach.pdf) |
-| XGBoost + SHAP NBA Prediction | Uses XGBoost and SHAP to explain which stats drive winning. | [paper](background_reading/paper4_xgboost_shap.pdf) |
-| Basketball Reference Four Factors | Explains key basketball metrics that influence winning games. | [paper](background_reading/paper5_four_factors.pdf) |
+| Hybrid Basketball Game Outcome Prediction Model | Applies machine learning techniques to NBA data to predict game outcomes. | ./background_reading/paper1_hybrid_model.pdf |
+| GCN + Random Forest Basketball Prediction | Combines graph neural networks and random forests to improve prediction accuracy. | ./background_reading/paper2_gcn_rf.pdf |
+| Predicting the Winning Team in Basketball | Explores statistical patterns in basketball data to predict winners. | ./background_reading/paper3_novel_approach.pdf |
+| XGBoost + SHAP NBA Prediction | Uses XGBoost and SHAP to explain which stats drive winning. | ./background_reading/paper4_xgboost_shap.pdf |
+| Basketball Reference Four Factors | Explains key basketball metrics that influence winning games. | ./background_reading/paper5_four_factors.pdf |
 
 ## Data Creation
 
@@ -98,6 +98,21 @@ I selected a small set of core tables to keep the relational structure manageabl
 
 ### Schema
 [Add ER diagram or description here]
+
+## Data
+
+The dataset used in this project is stored externally due to size constraints.
+
+**UVA OneDrive Link:**  
+https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQJ1Ainn6krPOAW7eg6799hKzGlpeC4XWkjI?e=6En401
+
+The dataset includes the following core tables:
+- game.csv
+- line_score.csv
+- team_history.csv
+- other_stats.csv
+
+These files are used to construct a relational dataset for analyzing and predicting NBA game outcomes.
 
 ### Data Table
 | Table Name | Description | Link |
