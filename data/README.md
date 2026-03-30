@@ -7,4 +7,3 @@ This folder holds the core CSV tables for the relational dataset.
 - `team_history.csv` — team history dimension (header row only until populated).
 - `other_stats.csv` — supplemental stats (header row only until populated).
 
-Replace headers if your final schema differs.
