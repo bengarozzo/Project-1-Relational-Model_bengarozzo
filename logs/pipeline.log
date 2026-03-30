@@ -33,3 +33,56 @@
 [[1079 2572]
  [ 848 4769]]
 2026-03-30 10:09:51,105 - INFO - Plotting prediction accuracy chart
+2026-03-30 14:43:07,505 - INFO - Starting create_project_data workflow
+2026-03-30 14:43:07,510 - INFO - Loading file: ../data/game.csv
+2026-03-30 14:43:08,001 - INFO - Loading file: ../data/line_score.csv
+2026-03-30 14:43:08,204 - INFO - Loading file: ../data/team_history.csv
+2026-03-30 14:43:08,210 - INFO - Loading file: ../data/other_stats.csv
+2026-03-30 14:43:08,272 - INFO - game passed column validation
+2026-03-30 14:43:08,273 - INFO - line_score passed column validation
+2026-03-30 14:43:08,273 - INFO - team_history passed column validation
+2026-03-30 14:43:08,274 - INFO - other_stats passed column validation
+2026-03-30 14:43:08,503 - INFO - All tables registered in DuckDB
+2026-03-30 14:43:08,504 - INFO - Running SQL validation queries
+2026-03-30 14:43:08,648 - INFO - Cleaned game table shape: (65642, 55)
+2026-03-30 14:43:08,683 - INFO - Cleaned line_score table shape: (58013, 43)
+2026-03-30 14:43:08,685 - INFO - Cleaned team_history table shape: (52, 5)
+2026-03-30 14:43:08,694 - INFO - Cleaned other_stats table shape: (28261, 26)
+2026-03-30 14:43:11,173 - INFO - Exported cleaned CSV files to ../data/cleaned
+2026-03-30 14:43:11,188 - INFO - create_project_data workflow completed successfully
+2026-03-30 14:47:14,431 - INFO - Starting nba_pipeline workflow
+2026-03-30 14:47:14,437 - INFO - Loading file: ../data/cleaned/game_clean.csv
+2026-03-30 14:47:15,302 - INFO - Loading file: ../data/cleaned/line_score_clean.csv
+2026-03-30 14:47:15,814 - INFO - Loading file: ../data/cleaned/team_history_clean.csv
+2026-03-30 14:47:15,856 - INFO - Loading file: ../data/cleaned/other_stats_clean.csv
+2026-03-30 14:47:16,007 - INFO - Registering cleaned tables in DuckDB
+2026-03-30 14:47:16,186 - INFO - Running SQL checks
+2026-03-30 14:47:16,295 - INFO - Building modeling dataset
+2026-03-30 14:47:16,805 - INFO - Modeling dataset shape: (46323, 23)
+2026-03-30 14:47:16,842 - INFO - Training model
+2026-03-30 14:47:20,291 - INFO - Accuracy: 0.6204
+2026-03-30 14:47:20,294 - INFO - Confusion matrix:
+[[1066 2666]
+ [ 851 4682]]
+2026-03-30 14:47:20,300 - INFO - Plotting accuracy summary chart
+2026-03-30 14:47:20,780 - INFO - Plotting confidence vs accuracy chart
+2026-03-30 14:47:21,202 - INFO - Plotting feature importance chart
+2026-03-30 14:47:21,523 - INFO - nba_pipeline workflow completed successfully
+2026-03-30 14:47:34,270 - INFO - Starting nba_pipeline workflow
+2026-03-30 14:47:34,272 - INFO - Loading file: ../data/cleaned/game_clean.csv
+2026-03-30 14:47:34,563 - INFO - Loading file: ../data/cleaned/line_score_clean.csv
+2026-03-30 14:47:34,714 - INFO - Loading file: ../data/cleaned/team_history_clean.csv
+2026-03-30 14:47:34,716 - INFO - Loading file: ../data/cleaned/other_stats_clean.csv
+2026-03-30 14:47:34,768 - INFO - Registering cleaned tables in DuckDB
+2026-03-30 14:47:34,830 - INFO - Running SQL checks
+2026-03-30 14:47:34,871 - INFO - Building modeling dataset
+2026-03-30 14:47:35,671 - INFO - Modeling dataset shape: (46323, 23)
+2026-03-30 14:47:35,688 - INFO - Training model
+2026-03-30 14:47:37,659 - INFO - Accuracy: 0.6204
+2026-03-30 14:47:37,660 - INFO - Confusion matrix:
+[[1066 2666]
+ [ 851 4682]]
+2026-03-30 14:47:37,740 - INFO - Plotting accuracy summary chart
+2026-03-30 14:47:37,918 - INFO - Plotting confidence vs accuracy chart
+2026-03-30 14:47:38,422 - INFO - Plotting feature importance chart
+2026-03-30 14:47:38,810 - INFO - nba_pipeline workflow completed successfully
