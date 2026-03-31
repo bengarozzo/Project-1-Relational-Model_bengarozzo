@@ -1,0 +1,71 @@
+erDiagram
+    TEAM_HISTORY {
+        int team_id PK
+        string city
+        string nickname
+        int year_founded
+        int year_active_till
+    }
+
+    GAME {
+        int game_id PK
+        date game_date
+        int season_id
+        string season_type
+        int team_id_home FK
+        int team_id_away FK
+        string team_abbreviation_home
+        string team_abbreviation_away
+        float pts_home
+        float pts_away
+        float reb_home
+        float reb_away
+        float ast_home
+        float ast_away
+        float tov_home
+        float tov_away
+        float fg_pct_home
+        float fg_pct_away
+    }
+
+    LINE_SCORE {
+        int game_id PK
+        date game_date_est
+        int team_id_home FK
+        int team_id_away FK
+        float pts_qtr1_home
+        float pts_qtr2_home
+        float pts_qtr3_home
+        float pts_qtr4_home
+        float pts_home
+        float pts_qtr1_away
+        float pts_qtr2_away
+        float pts_qtr3_away
+        float pts_qtr4_away
+        float pts_away
+    }
+
+    OTHER_STATS {
+        int game_id PK
+        int team_id_home FK
+        int team_id_away FK
+        float pts_paint_home
+        float pts_2nd_chance_home
+        float pts_fb_home
+        float largest_lead_home
+        float lead_changes
+        float times_tied
+        float pts_paint_away
+        float pts_2nd_chance_away
+        float pts_fb_away
+        float largest_lead_away
+    }
+
+    TEAM_HISTORY ||--o{ GAME : "home team"
+    TEAM_HISTORY ||--o{ GAME : "away team"
+    TEAM_HISTORY ||--o{ LINE_SCORE : "home team"
+    TEAM_HISTORY ||--o{ LINE_SCORE : "away team"
+    TEAM_HISTORY ||--o{ OTHER_STATS : "home team"
+    TEAM_HISTORY ||--o{ OTHER_STATS : "away team"
+    GAME ||--|| LINE_SCORE : "game_id"
+    GAME ||--o| OTHER_STATS : "game_id"
