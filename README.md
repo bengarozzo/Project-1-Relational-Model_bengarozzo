@@ -174,7 +174,6 @@ https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQ
 | team_abbreviation_away | string | Abbreviation of away team | BOS |
 | pts_home | float | Points scored by home team | 91.0 |
 | pts_away | float | Points scored by away team | 102.0 |
-
 | avg_pts_home | float | Rolling average points scored by home team (last 10 games) | 89.4 |
 | avg_reb_home | float | Rolling average rebounds by home team | 43.0 |
 | avg_ast_home | float | Rolling average assists by home team | 22.2 |
@@ -182,7 +181,6 @@ https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQ
 | avg_fg_pct_home | float | Rolling average field goal percentage (home team) | 0.458 |
 | avg_fg3_pct_home | float | Rolling average three-point percentage (home team) | 0.2666 |
 | avg_ft_pct_home | float | Rolling average free throw percentage (home team) | 0.7158 |
-
 | avg_pts_away | float | Rolling average points scored by away team (last 10 games) | 98.4 |
 | avg_reb_away | float | Rolling average rebounds by away team | 49.4 |
 | avg_ast_away | float | Rolling average assists by away team | 22.2 |
@@ -190,7 +188,6 @@ https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQ
 | avg_fg_pct_away | float | Rolling average field goal percentage (away team) | 0.458 |
 | avg_fg3_pct_away | float | Rolling average three-point percentage (away team) | 0.1334 |
 | avg_ft_pct_away | float | Rolling average free throw percentage (away team) | 0.7237 |
-
 | home_win | binary | Target variable: 1 if home team wins, 0 otherwise | 0 |
 
 ---
