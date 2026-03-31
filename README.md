@@ -164,19 +164,34 @@ https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQ
 
 ### Data Dictionary
 
-| Feature | Type | Description | Example |
-|--------|------|------------|--------|
-| game_id | int | Unique game ID | 24600001 |
-| game_date | date | Game date | 2021-10-19 |
-| team_id_home | int | Home team ID | 1610612737 |
-| team_id_away | int | Away team ID | 1610612738 |
-| pts_home | int | Home points | 110 |
-| pts_away | int | Away points | 105 |
-| avg_pts_home | float | Rolling avg points (home) | 108.3 |
-| avg_pts_away | float | Rolling avg points (away) | 102.5 |
-| avg_fg_pct_home | float | Shooting efficiency (home) | 0.47 |
-| avg_fg_pct_away | float | Shooting efficiency (away) | 0.45 |
-| home_win | binary | 1 if home wins | 1 |
+| Feature | Data Type | Description | Example |
+|--------|----------|------------|--------|
+| game_id | integer | Unique identifier for each NBA game | 48000053 |
+| game_date | date | Date the game was played | 1981-05-14 |
+| team_id_home | integer | Unique ID for the home team | 1610612745 |
+| team_id_away | integer | Unique ID for the away team | 1610612738 |
+| team_abbreviation_home | string | Abbreviation of home team | HOU |
+| team_abbreviation_away | string | Abbreviation of away team | BOS |
+| pts_home | float | Points scored by home team | 91.0 |
+| pts_away | float | Points scored by away team | 102.0 |
+
+| avg_pts_home | float | Rolling average points scored by home team (last 10 games) | 89.4 |
+| avg_reb_home | float | Rolling average rebounds by home team | 43.0 |
+| avg_ast_home | float | Rolling average assists by home team | 22.2 |
+| avg_tov_home | float | Rolling average turnovers by home team | 17.6 |
+| avg_fg_pct_home | float | Rolling average field goal percentage (home team) | 0.458 |
+| avg_fg3_pct_home | float | Rolling average three-point percentage (home team) | 0.2666 |
+| avg_ft_pct_home | float | Rolling average free throw percentage (home team) | 0.7158 |
+
+| avg_pts_away | float | Rolling average points scored by away team (last 10 games) | 98.4 |
+| avg_reb_away | float | Rolling average rebounds by away team | 49.4 |
+| avg_ast_away | float | Rolling average assists by away team | 22.2 |
+| avg_tov_away | float | Rolling average turnovers by away team | 17.6 |
+| avg_fg_pct_away | float | Rolling average field goal percentage (away team) | 0.458 |
+| avg_fg3_pct_away | float | Rolling average three-point percentage (away team) | 0.1334 |
+| avg_ft_pct_away | float | Rolling average free throw percentage (away team) | 0.7237 |
+
+| home_win | binary | Target variable: 1 if home team wins, 0 otherwise | 0 |
 
 ---
 
