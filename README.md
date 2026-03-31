@@ -197,11 +197,16 @@ https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQ
 
 ### Numerical Uncertainty
 
-| Feature | Uncertainty |
-|--------|------------|
-| pts_home / pts_away | Mean ≈ 104, Std ≈ 13, Range ≈ 50–160 |
-| fg_pct_home | Mean ≈ 0.46, Std ≈ 0.05 |
-| reb_home | Mean ≈ 44, Std ≈ 7 |
+| Feature | Mean | Std Dev | Min | Max |
+|--------|------|--------|-----|-----|
+| pts_home | 103.79 | 13.61 | 36.0 | 175.0 |
+| pts_away | 100.46 | 13.29 | 33.0 | 184.0 |
+| avg_pts_home | 102.06 | 8.21 | 74.8 | 162.6 |
+| avg_pts_away | 102.19 | 8.25 | 74.4 | 155.4 |
+| avg_fg_pct_home | 0.460 | 0.026 | 0.363 | 0.559 |
+| avg_fg_pct_away | 0.460 | 0.026 | 0.363 | 0.564 |
+| avg_reb_home | 42.67 | 2.97 | 31.1 | 55.4 |
+| avg_reb_away | 42.74 | 2.98 | 31.7 | 54.8 |
 
 ---
 
