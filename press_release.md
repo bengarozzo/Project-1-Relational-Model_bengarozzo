@@ -30,4 +30,4 @@ The chart below shows how a team’s recent scoring advantage affects both predi
 
 As the home team’s scoring advantage increases, both the predicted probability and actual win rate increase. However, the spread of points shows that outcomes are not certain, even when one team appears stronger.
 
-![Home Team Scoring Advantage vs Win Probability](./docs/press_release_main_chart.png)
+<img width="924" height="575" alt="Screenshot 2026-03-31 at 12 50 47 PM" src="https://github.com/user-attachments/assets/1209a5cc-4d75-4b45-aceb-dbfb7f9a11ef" />
