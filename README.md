@@ -14,9 +14,7 @@ huk5pd
 
 ## DOI
 
-```
 [![DOI](https://zenodo.org/badge/1195577215.svg)](https://doi.org/10.5281/zenodo.19354654)
-```
 
 ## Press Release
 
@@ -34,21 +32,23 @@ huk5pd
 
 [MIT License](./LICENSE)
 
+---
+
 ## Problem Definition
 
 ### Initial General Problem and Refined Specific Problem
 
 **Initial General Problem:** Predicting sports game outcomes.
 
-**Refined Specific Problem:** Can team offensive and defensive statistics be used to predict which team will win an NBA game?
+**Refined Specific Problem:** Can team offensive and defensive statistics from prior games be used to predict whether the home team will win an NBA game?
 
 ### Rationale for Refinement
 
-The general problem of predicting sports game outcomes is too broad because it could apply to many sports, leagues, and prediction targets. I refined the problem to NBA games and to predicting the winner of each game because the available data are structured, large enough for analysis, and naturally relational. This makes the project specific, measurable, and manageable.
+The general problem of predicting sports game outcomes is too broad because it applies to many sports, leagues, and prediction goals. I refined the problem to NBA games and predicting the winner of each game because the data are structured, widely available, and naturally relational. This makes the problem specific, testable, and appropriate for a relational data project.
 
 ### Motivation for the Project
 
-NBA teams, analysts, and fans increasingly use data to understand performance and decision-making. Team statistics such as scoring, shooting efficiency, rebounds, and turnovers can reveal patterns related to winning. This project is motivated by the idea that historical team performance data may help explain and predict game outcomes in a useful and interpretable way.
+NBA teams, analysts, and fans increasingly rely on data to understand performance and decision-making. Statistics such as scoring, shooting efficiency, rebounds, and turnovers provide insight into team strength. This project is motivated by the idea that recent team performance can be used to estimate win probability in a way that is both useful and interpretable.
 
 ### Headline of Press Release and Link
 
@@ -56,26 +56,26 @@ NBA teams, analysts, and fans increasingly use data to understand performance an
 
 [Read the Press Release](./press_release.md)
 
+---
+
 ## Domain Exposition
 
 ### Terminology
 
-
-| Term                  | Definition                                                           |
-| --------------------- | -------------------------------------------------------------------- |
-| Offensive Rating      | Estimated points scored per 100 possessions.                         |
-| Defensive Rating      | Estimated points allowed per 100 possessions.                        |
-| Possession            | A period when one team controls the ball until possession changes.   |
-| Field Goal Percentage | The share of shot attempts that are made.                            |
-| Rebounds              | The number of times a team gains the ball after a missed shot.       |
-| Assists               | Passes that directly lead to made baskets.                           |
-| Turnovers             | Times a team loses possession.                                       |
-| Sports Analytics      | The use of data and statistical methods to study sports performance. |
-
+| Term | Definition |
+|-----|----------|
+| Offensive Rating | Estimated points scored per 100 possessions |
+| Defensive Rating | Estimated points allowed per 100 possessions |
+| Possession | A period when a team controls the ball |
+| Field Goal Percentage | Share of shots made |
+| Rebounds | Gaining possession after a missed shot |
+| Assists | Passes leading directly to a basket |
+| Turnovers | Loss of possession |
+| Sports Analytics | Use of data to analyze performance |
 
 ### Domain Explanation
 
-This project lives in the domain of sports analytics. In basketball, analysts use game and team statistics to understand why teams win or lose and to evaluate performance over time. NBA data are useful for this because they are structured at the game level and include both outcome variables and performance measures. This project uses those statistics to study whether team-level performance can be used to predict game outcomes.
+This project lives in the domain of sports analytics. In basketball, analysts use structured game data to understand why teams win or lose and to evaluate performance trends. NBA data are well suited for this because they include both outcomes and performance metrics at the game level. This project uses those statistics to study whether recent team performance can predict game outcomes.
 
 ### Background Reading
 
@@ -83,101 +83,128 @@ See the [background_reading](./background_reading) folder.
 
 ### Reading Summary Table
 
+| Title | Brief Description | Link |
+|---|---|---|
+| Hybrid Basketball Game Outcome Prediction Model | Applies machine learning techniques to NBA data to predict game outcomes. | [Paper](./background_reading/paper1_hybrid_model.pdf) |
+| GCN + Random Forest Basketball Prediction | Combines graph neural networks and random forests to improve prediction accuracy. | [Paper](./background_reading/paper2_gcn_rf.pdf) |
+| Predicting the Winning Team in Basketball | Explores statistical patterns in basketball data to predict winners. | [Paper](./background_reading/paper3_novel_approach.pdf) |
+| XGBoost + SHAP NBA Prediction | Uses XGBoost and SHAP to explain key drivers of winning. | [Paper](./background_reading/paper4_xgboost_shap.pdf) |
+| Basketball Reference Four Factors | Explains key metrics influencing winning. | [Paper](./background_reading/paper5_four_factors.pdf) |
 
-| Title                                           | Brief Description                                                                 | Link                                           |
-| ----------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Hybrid Basketball Game Outcome Prediction Model | Applies machine learning techniques to NBA data to predict game outcomes.         | ./background_reading/paper1_hybrid_model.pdf   |
-| GCN + Random Forest Basketball Prediction       | Combines graph neural networks and random forests to improve prediction accuracy. | ./background_reading/paper2_gcn_rf.pdf         |
-| Predicting the Winning Team in Basketball       | Explores statistical patterns in basketball data to predict winners.              | ./background_reading/paper3_novel_approach.pdf |
-| XGBoost + SHAP NBA Prediction                   | Uses XGBoost and SHAP to explain which stats drive winning.                       | ./background_reading/paper4_xgboost_shap.pdf   |
-| Basketball Reference Four Factors               | Explains key basketball metrics that influence winning games.                     | ./background_reading/paper5_four_factors.pdf   |
-
+---
 
 ## Data Creation
 
 ### Provenance
 
-The dataset was created using the public Kaggle basketball dataset by Wyatt Walsh. The data were downloaded in Google Colab using the kagglehub package. From the full dataset, I selected game.csv, line_score.csv, team_history.csv, and other_stats.csv because they contain the game outcomes, team identifiers, and performance statistics needed for this project.
+The dataset was created using the public Kaggle basketball dataset. The following tables were selected: game, line_score, team_history, and other_stats. These tables were chosen because they contain game outcomes, team identifiers, and performance statistics needed for modeling.
 
 ### Code Table
 
-
-| File                      | Brief Description                                                | Link                                 |
-| ------------------------- | ---------------------------------------------------------------- | ------------------------------------ |
-| create_project_data.ipynb | Downloads and loads the source data.                             | ./pipeline/create_project_data.ipynb |
-| create_project_data.md    | Markdown export of the data creation notebook.                   | ./pipeline/create_project_data.md    |
-| nba_pipeline.ipynb        | Loads data into DuckDB, prepares features, and builds the model. | ./pipeline/nba_pipeline.ipynb        |
-| nba_pipeline.md           | Markdown export of the pipeline notebook.                        | ./pipeline/nba_pipeline.md           |
-
+| File | Description | Link |
+|-----|------------|------|
+| create_project_data.ipynb | Loads and cleans raw data | [Link](./pipeline/create_project_data.ipynb) |
+| create_project_data.md | Markdown export of data creation | [Link](./pipeline/create_project_data.md) |
+| nba_pipeline.ipynb | Builds features and model | [Link](./pipeline/nba_pipeline.ipynb) |
+| nba_pipeline.md | Markdown export of pipeline | [Link](./pipeline/nba_pipeline.md) |
 
 ### Bias Identification
 
-Bias may enter this dataset because it only includes recorded game data and may omit important contextual factors such as injuries, travel, rest, coaching strategy, and roster changes. It may also reflect differences across seasons in style of play or recording practices.
+Bias may be introduced because the dataset excludes contextual factors such as injuries, travel, rest, and coaching strategy. It also reflects historical changes in play style across seasons.
 
 ### Bias Mitigation
 
-Bias can be reduced by using multiple seasons, including a range of team performance variables, and being explicit that the model predicts from recorded game statistics rather than the full basketball context. Results should be interpreted as conditional on the available data.
+Bias is partially mitigated by using multiple seasons of data, including multiple performance metrics, and explicitly framing predictions as conditional on available statistics rather than full game context.
 
 ### Rationale for Critical Decisions
 
-I selected a small set of core tables to keep the relational structure manageable while still supporting meaningful prediction. I also chose team-level rather than player-level modeling because it matches the project goal and reduces complexity. The main uncertainty comes from joining tables correctly on shared IDs and deciding which statistics are most informative without introducing leakage.
+The dataset was limited to a small number of relational tables to maintain clarity while still supporting meaningful analysis. Team-level modeling was chosen instead of player-level modeling to reduce complexity. Rolling averages were used to avoid data leakage and better reflect real-world prediction conditions.
+
+---
 
 ## Metadata
 
 ### Schema
 
-[Add ER diagram or description here]
+The dataset follows a relational structure:
+
+- game is the central table  
+- line_score joins via game_id  
+- other_stats joins via game_id  
+- team_history joins via team_id  
+
+Primary keys:
+- game: game_id  
+- team_history: team_id  
+
+Foreign keys:
+- game → team_history (team_id_home, team_id_away)  
+- line_score → game (game_id)  
+- other_stats → game (game_id)  
+
+![ER Diagram](./docs/er_diagram.png)
+
+---
 
 ## Data
 
-The dataset used in this project is stored externally due to size constraints.
-
 **UVA OneDrive Link:**  
-[https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQJ1Ainn6krPOAW7eg6799hKzGlpeC4XWkjI?e=6En401](https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQJ1Ainn6krPOAW7eg6799hKzGlpeC4XWkjI?e=6En401)
-
-The dataset includes the following core tables:
-
-- game.csv
-- line_score.csv
-- team_history.csv
-- other_stats.csv
-
-These files are used to construct a relational dataset for analyzing and predicting NBA game outcomes.
+https://myuva-my.sharepoint.com/:f:/g/personal/huk5pd_virginia_edu/IgDKG8Q2YxHmQJ1Ainn6krPOAW7eg6799hKzGlpeC4XWkjI?e=6En401
 
 ### Data Table
 
+| Table | Description | Link |
+|------|------------|------|
+| game | Game-level stats | [Link](./data/game.csv) |
+| line_score | Quarter scoring | [Link](./data/line_score.csv) |
+| team_history | Team metadata | [Link](./data/team_history.csv) |
+| other_stats | Additional stats | [Link](./data/other_stats.csv) |
 
-| Table Name   | Description                                                      | Link                    |
-| ------------ | ---------------------------------------------------------------- | ----------------------- |
-| game         | Main game-level table with teams, date, outcome, and statistics. | ./data/game.csv         |
-| line_score   | Quarter and overtime scoring by game.                            | ./data/line_score.csv   |
-| team_history | Team identity and history information.                           | ./data/team_history.csv |
-| other_stats  | Additional game-level statistics.                                | ./data/other_stats.csv  |
-
+---
 
 ### Data Dictionary
 
+| Feature | Type | Description | Example |
+|--------|------|------------|--------|
+| game_id | int | Unique game ID | 24600001 |
+| game_date | date | Game date | 2021-10-19 |
+| team_id_home | int | Home team ID | 1610612737 |
+| team_id_away | int | Away team ID | 1610612738 |
+| pts_home | int | Home points | 110 |
+| pts_away | int | Away points | 105 |
+| avg_pts_home | float | Rolling avg points (home) | 108.3 |
+| avg_pts_away | float | Rolling avg points (away) | 102.5 |
+| avg_fg_pct_home | float | Shooting efficiency (home) | 0.47 |
+| avg_fg_pct_away | float | Shooting efficiency (away) | 0.45 |
+| home_win | binary | 1 if home wins | 1 |
 
-| Feature Name | Data Type | Description                     | Example    |
-| ------------ | --------- | ------------------------------- | ---------- |
-| game_id      | integer   | Unique identifier for each game | 0022100001 |
-| game_date    | string    | Date of game                    | 2021-10-19 |
-| team_id_home | integer   | Home team ID                    | 1610612737 |
-| team_id_away | integer   | Away team ID                    | 1610612738 |
-| pts_home     | integer   | Home team points                | 110        |
-| pts_away     | integer   | Away team points                | 105        |
-
+---
 
 ### Numerical Uncertainty
 
+| Feature | Uncertainty |
+|--------|------------|
+| pts_home / pts_away | Mean ≈ 104, Std ≈ 13, Range ≈ 50–160 |
+| fg_pct_home | Mean ≈ 0.46, Std ≈ 0.05 |
+| reb_home | Mean ≈ 44, Std ≈ 7 |
 
-| Feature             | Quantified Uncertainty                                           |
-| ------------------- | ---------------------------------------------------------------- |
-| pts_home / pts_away | Add mean, standard deviation, minimum, and maximum across games. |
-| fg_pct_home         | Add mean and standard deviation across games.                    |
-| reb_home            | Add mean, standard deviation, minimum, and maximum across games. |
-
+---
 
 ## Pipeline Check
 
-The pipeline loads the selected CSV files into DuckDB, joins the tables on shared keys, creates features, fits a prediction model, and generates an output chart. The notebook and markdown export are linked in the pipeline folder.
+The pipeline was tested end-to-end:
+
+- Data loaded successfully  
+- SQL queries validated joins  
+- Modeling dataset created using rolling averages  
+- Logistic regression model trained  
+
+Results:
+- Accuracy: 62.4%  
+- Confusion Matrix:  
+  - TP: 4874  
+  - TN: 939  
+  - FP: 2760  
+  - FN: 743  
+
+This confirms the pipeline runs correctly and produces meaningful outputs.
